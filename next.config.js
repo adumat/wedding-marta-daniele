@@ -6,7 +6,7 @@ const path = require('path');
  *****************************************************************************/
 
 // Set base path if your static app does not start from root
-const basePath = ''; // '/wedding-marta-daniele'
+const basePath = '/wedding-marta-daniele'; // '/wedding-marta-daniele'
 
 // Set any other dynamic routes in pages
 const dynamicRoutes = {
