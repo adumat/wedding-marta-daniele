@@ -10,7 +10,7 @@
     "slides:publish": "subpath-as-branch -p dist -b gh-pages",
     "slides:cleanup": "rm -rf dist",
     "slides:precleanup": "rm -rf .next dist",
-    "ci": "npm run slides:precleanup && npm run slides:prodbuild && npm run slides:export"
+    "siteBuild": "npm run slides:precleanup && npm run slides:prodbuild && npm run slides:export"
   },
   "repository": {
     "type": "git",
