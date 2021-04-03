@@ -1,12 +1,14 @@
 const path = require('path');
+const env = require('dotenv');
 // const CompressionPlugin = require('compression-webpack-plugin');
 
 /*****************************************************************************
  * SET YOUR CONFIGURATION HERE
  *****************************************************************************/
 
+
 // Set base path if your static app does not start from root
-const basePath = '/wedding-marta-daniele'; // '/wedding-marta-daniele'
+const basePath = env.NODE_ENV === undefined ? '/wedding-marta-daniele' : ''; // '/wedding-marta-daniele'
 
 // Set any other dynamic routes in pages
 const dynamicRoutes = {
@@ -18,16 +20,14 @@ const dynamicRoutes = {
 /*****************************************************************************
  *****************************************************************************/
 
-const webpackBasePath = process.env.SPA_EXP_BUILD === 'true' ? basePath : ''
-
 module.exports = {
   publicRuntimeConfig: {
-    basePath: webpackBasePath,
+    basePath: basePath,
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
-  assetPrefix: webpackBasePath,
+  assetPrefix: basePath,
   exportPathMap: async function(defaultPathMap) {
     return Object.assign({}, defaultPathMap, dynamicRoutes);
   },
