@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import PropTypes from 'prop-types'
-import getConfig from 'next/config'
+import PropTypes from 'prop-types';
+import getConfig from 'next/config';
+import React from 'react';
 
 const { publicRuntimeConfig } = getConfig()
 const basePath = publicRuntimeConfig.basePath || ''

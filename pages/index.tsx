@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import BasePathLink from '@helpers/BasePathLink';
+import BasePathLink from 'helpers/BasePathLink';
+import React from 'react';
 
 export default function Home() {
   // <Head> adds/replace attributes in <head> DOM element, such as the <title> element

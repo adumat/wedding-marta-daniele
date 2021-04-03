@@ -9,7 +9,8 @@
     "slides:export": "next export -o dist && cp ./_config.yml dist/_config.yml",
     "slides:publish": "subpath-as-branch -p dist -b gh-pages",
     "slides:cleanup": "rm -rf dist",
-    "slides:precleanup": "rm -rf .next dist"
+    "slides:precleanup": "rm -rf .next dist",
+    "ci": "npm run slides:precleanup && npm run slides:prodbuild && npm run slides:export"
   },
   "repository": {
     "type": "git",
@@ -22,14 +23,14 @@
   },
   "homepage": "https://github.com/Weiyuan-Lane/slides#readme",
   "devDependencies": {
-    "@zeit/next-sass": "~1.0.1",
-    "compression-webpack-plugin": "^3.1.0",
-    "file-loader": "~4.2.0",
-    "next": "^9.1.7",
-    "node-sass": "~4.12.0",
-    "react": "~16.9.0",
-    "react-dom": "~16.9.0",
-    "subpath-as-branch": "~1.0.0",
-    "url-loader": "~2.1.0"
+    "@types/react": "^17.0.3",
+    "file-loader": "^6.2.0",
+    "next": "^10.1.3",
+    "react": "~17.0.2",
+    "react-dom": "~17.0.2",
+    "sass": "^1.32.8",
+    "subpath-as-branch": "^1.0.0",
+    "typescript": "^4.2.3",
+    "url-loader": "^4.1.1"
   }
 }
