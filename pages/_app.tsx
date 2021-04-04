@@ -1,23 +1,7 @@
-import React from 'react';
-import Head from 'next/head';
-import App from 'next/app';
-import '../styles/home.scss';
+import '../styles/globals.css'
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
 
-    return (
-      <React.Fragment>
-        <Head>
-          <meta charSet="UTF-8"/>
-          <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-          <title>This is a default title</title>
-        </Head>
-        <Component {...pageProps} />
-      </React.Fragment>
-    );
-  }
-};
-
-export default MyApp;
+export default MyApp
