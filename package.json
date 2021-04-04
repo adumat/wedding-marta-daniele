@@ -1,39 +1,17 @@
 {
-  "name": "spa-github-page-template",
+  "name": "wedding-marta-daniele",
   "version": "0.0.1",
-  "description": "Static site generator with a Single Page Application (NextJS!)",
+  "private": true,
   "scripts": {
-    "start": "next",
-    "publish": "npm run slides:precleanup && npm run slides:prodbuild && npm run slides:export && npm run slides:publish && npm run slides:cleanup",
-    "slides:prodbuild": "export SPA_EXP_BUILD=true && next build",
-    "slides:export": "next export -o dist && cp ./_config.yml dist/_config.yml",
-    "slides:publish": "subpath-as-branch -p dist -b gh-pages",
-    "slides:cleanup": "rm -rf dist",
-    "slides:precleanup": "rm -rf .next dist",
-    "siteBuild": "npm run slides:precleanup && npm run slides:prodbuild && npm run slides:export"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Weiyuan-Lane/slides.git"
-  },
-  "author": "Weiyuan Liu",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Weiyuan-Lane/slides/issues"
-  },
-  "homepage": "https://github.com/Weiyuan-Lane/slides#readme",
-  "devDependencies": {
+  "dependencies": {
     "@types/react": "^17.0.3",
-    "file-loader": "^6.2.0",
     "next": "^10.1.3",
     "react": "~17.0.2",
     "react-dom": "~17.0.2",
-    "sass": "^1.32.8",
-    "subpath-as-branch": "^1.0.0",
-    "typescript": "^4.2.3",
-    "url-loader": "^4.1.1"
-  },
-  "dependencies": {
-    "dotenv": "^8.2.0"
+    "typescript": "^4.2.3"
   }
 }

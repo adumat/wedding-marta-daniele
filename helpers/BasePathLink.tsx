@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 import getConfig from 'next/config';
 import React from 'react';
 
@@ -23,9 +22,5 @@ export default function BasePathLink({ href, children, ...props }){
       {children}
     </Link>
   )
-}
-
-BasePathLink.propTypes = {
-  href: PropTypes.string.isRequired,
 }
 

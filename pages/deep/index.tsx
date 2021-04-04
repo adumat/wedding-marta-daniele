@@ -1,4 +1,4 @@
-import BasePathLink from 'helpers/BasePathLink';
+import BasePathLink from '../../helpers/BasePathLink';
 import React from 'react';
 
 export default function Deep() {

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import BasePathLink from 'helpers/BasePathLink';
+import BasePathLink from '../helpers/BasePathLink';
 import React from 'react';
 
 export default function Home() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import App from 'next/app';
-import 'styles/home.scss';
+import '../styles/home.scss';
 
 class MyApp extends App {
   render() {
