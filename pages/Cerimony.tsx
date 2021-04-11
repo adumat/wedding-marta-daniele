@@ -3,7 +3,7 @@ import useWindowDimensions from "../services/useWindowDimensions";
 import React from "react";
 
 const Map = React.memo(function MapIframe({ height }: { height: number }) {
-  return (<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11880.630755381164!2d12.4696635!3d41.8894657!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x366752f3f04c4022!2sBasilica%20of%20Our%20Lady%20in%20Trastevere!5e0!3m2!1sen!2sit!4v1618175655026!5m2!1sen!2sit" width="600" height={ height } style={{ border: 0 }} allowFullScreen="" loading="lazy"></iframe>);
+  return (<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11880.630755381164!2d12.4696635!3d41.8894657!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x366752f3f04c4022!2sBasilica%20of%20Our%20Lady%20in%20Trastevere!5e0!3m2!1sen!2sit!4v1618175655026!5m2!1sen!2sit" width="600" height={ height } style={{ border: 0 }} allowFullScreen={false} loading="lazy"></iframe>);
 });
 
 export function Cerimony() {
