@@ -1,7 +1,7 @@
 import { Row, Col } from "react-bootstrap";
 import useWindowDimensions from "../services/useWindowDimensions";
 
-export function Party() {
+export default function Party() {
   const { height } = useWindowDimensions();
   return (
     <Row id="party" style={{ backgroundColor: 'yellow' }}>

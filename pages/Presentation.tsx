@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import useWindowDimensions from "../services/useWindowDimensions";
 
-export function Presentation() {
+export default function Presentation() {
   const { height } = useWindowDimensions();
   return (
     <div id="home" className="d-flex justify-content-center align-items-center" style={{ minHeight: height }}>
