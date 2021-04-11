@@ -1,13 +1,25 @@
-import {Link, animateScroll} from "react-scroll";
-import React from "react";
-import styles from '../styles/Home.module.css';
+// import { Link, animateScroll } from "react-scroll";
+import { Navbar as BNavbar, Nav } from "react-bootstrap";
 
 export default function Navbar() {
-  const handleScrollTop = () => {
-    animateScroll.scrollToTop();
-  };
+  // const handleScrollTop = () => {
+  //   animateScroll.scrollToTop();
+  // };
   return (
-    <nav className={styles.nav} id="navbar">
+      <BNavbar style={{ backgroundColor: "rgba(255,255,255,0.8)" }} expand="lg" fixed="top" className="d-flex justify-content-center align-items-center">
+        <Nav>
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#cerimony">Cerimonia</Nav.Link>
+          <Nav.Link href="#accomodation">Alloggio</Nav.Link>
+          <Nav.Link href="#party">Ricevimento</Nav.Link>
+          <Nav.Link href="#wedding-list">Lista nozze</Nav.Link>
+        </Nav>
+      </BNavbar>
+  );
+}
+
+/*
+<nav className={styles.nav} id="navbar">
       <div className={styles.navContent}>
         <ul className={styles.navItems}>
           <li className={styles.navItem} onClick={handleScrollTop}>
@@ -15,54 +27,53 @@ export default function Navbar() {
           </li>
           <li className={styles.navItem}>
             <Link
-              activeClass="active"
-              to="section1"
+              activeClass={styles.active}
+              to="cerimony"
               spy={true}
               smooth={true}
-              offset={-70}
               duration={500}
+              isDynamic={true}
             >
-              Section 1
+              Cerimonia
             </Link>
           </li>
           <li className={styles.navItem}>
             <Link
-              activeClass="active"
-              to="section2"
+              activeClass={styles.active}
+              to="accomodation"
               spy={true}
               smooth={true}
-              offset={-70}
               duration={500}
+              isDynamic={true}
             >
-              Section 2
+              Alloggio
             </Link>
           </li>
           <li className={styles.navItem}>
             <Link
-              activeClass="active"
-              to="section3"
+              activeClass={styles.active}
+              to="party"
               spy={true}
               smooth={true}
-              offset={-70}
               duration={500}
+              isDynamic={true}
             >
-              Section 3
+              Ricevimento
             </Link>
           </li>
           <li className={styles.navItem}>
             <Link
-              activeClass="active"
-              to="section4"
+              activeClass={styles.active}
+              to="wedding-list"
               spy={true}
               smooth={true}
-              offset={-70}
               duration={500}
+              isDynamic={true}
             >
-              Section 4
+              Lista nozze
             </Link>
           </li>
         </ul>
       </div>
     </nav>
-  );
-}
+*/
