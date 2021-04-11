@@ -1,9 +1,9 @@
-import { Component, ReactPropTypes } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css';
 import '../styles/styles.css';
+import { AppProps } from 'next/dist/next-server/lib/router/router';
 
-function MyApp({ Component, pageProps }: {Component: Component; pageProps: ReactPropTypes }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Component {...pageProps} />
   );
