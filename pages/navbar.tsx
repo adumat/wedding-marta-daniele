@@ -1,18 +1,49 @@
-// import { Link, animateScroll } from "react-scroll";
+import { ScrollLink } from "react-scroll";
 import { Navbar as BNavbar, Nav } from "react-bootstrap";
+
+const Link = ScrollLink(Nav.Link);
 
 export default function Navbar() {
   // const handleScrollTop = () => {
   //   animateScroll.scrollToTop();
   // };
   return (
-      <BNavbar style={{ backgroundColor: "rgba(255,255,255,0.8)" }} expand="lg" fixed="top" className="d-flex justify-content-center align-items-center">
+      <BNavbar
+        style={{ backgroundColor: "rgba(255,255,255,0.8)" }}
+        expand={true}
+        fixed="top"
+        className="d-flex justify-content-center align-items-center">
         <Nav>
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#cerimony">Cerimonia</Nav.Link>
-          <Nav.Link href="#accomodation">Alloggio</Nav.Link>
-          <Nav.Link href="#party">Ricevimento</Nav.Link>
-          <Nav.Link href="#wedding-list">Lista nozze</Nav.Link>
+          <Link
+            to="home"
+            spy={true}
+          >
+            Home
+          </Link>
+          <Link
+            to="cerimony"
+            spy={true}
+          >
+            Cerimonia
+          </Link>
+          <Link
+            to="party"
+            spy={true}
+          >
+            Ricevimento
+          </Link>
+          <Link
+            to="accomodation"
+            spy={true}
+          >
+            Alloggio
+          </Link>
+          <Link
+            to="wedding-list"
+            spy={true}
+          >
+            Lista nozze
+          </Link>
         </Nav>
       </BNavbar>
   );

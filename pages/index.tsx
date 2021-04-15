@@ -18,8 +18,8 @@ export default function Home() {
         <Navbar />
         <Presentation />
         <Cerimony />
-        <Accomodation />
         <Party />
+        <Accomodation />
         <WeddingList />
       </Container>
     </>
