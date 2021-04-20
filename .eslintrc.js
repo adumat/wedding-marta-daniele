@@ -55,6 +55,6 @@ module.exports = {
     "space-before-function-paren": 0,
     '@typescript-eslint/no-unused-vars': ['warn', {argsIgnorePattern: '^_'}],
     "semi": ["error", "always"],
-    "react/react-in-jsx-scope": 0,
+    "react/react-in-jsx-scope": 0
   }
 };

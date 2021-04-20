@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import useWindowDimensions from "../services/useWindowDimensions";
 
 export default function Presentation() {
@@ -7,25 +7,9 @@ export default function Presentation() {
     <div id="home" className="d-flex justify-content-center align-items-center" style={{ minHeight: height }}>
       <Row className="text-center">
         <Col>
-          <Container>
-            <Row className="p-3">
-              <Col>
-                <span className="display-1 p-2">Marta</span>
-                <span className="display-2 p-2">&amp;</span>
-                <span className="display-1 p-2">Daniele</span>
-              </Col>
-            </Row>
-            <Row className="display-3 p-3">
-              <Col>
-                  Annunciano il loro matrimonio
-              </Col>
-            </Row>
-            <Row className="display-4 p-3">
-              <Col>
-                  Venerdì 3 Settembre 2021, alle ore 15.30
-              </Col>
-            </Row>
-          </Container>
+          <p className="lead">
+            Siamo felici di annunciare il nostro matrimonio che si terrà Venerdì 3 Settembre 2021 presso la Basilica di Santa Maria in Trastevere alle ore 15.30
+          </p>
         </Col>
       </Row>
     </div>

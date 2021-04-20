@@ -13,15 +13,18 @@ export default function Home() {
       <Head>
         <title>Wedding Marta &amp; Daniele</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Container fluid>
+      <div style={{ height: '100%' }}>
         <Navbar />
-        <Presentation />
-        <Cerimony />
-        <Party />
-        <Accomodation />
-        <WeddingList />
-      </Container>
+        <Container fluid="md">
+          <Presentation />
+          <Cerimony />
+          <Party />
+          <Accomodation />
+          <WeddingList />
+        </Container>
+      </div>
     </>
   );
 }

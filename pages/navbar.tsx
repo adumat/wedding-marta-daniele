@@ -9,38 +9,38 @@ export default function Navbar() {
   // };
   return (
       <BNavbar
-        style={{ backgroundColor: "rgba(255,255,255,0.8)" }}
         expand={true}
-        fixed="top"
-        className="d-flex justify-content-center align-items-center">
+        // fixed="top"
+        sticky="top"
+        className="d-flex justify-content-center align-items-center navbar">
         <Nav>
           <Link
             to="home"
-            spy={true}
+            spy={false}
           >
             Home
           </Link>
           <Link
             to="cerimony"
-            spy={true}
+            spy={false}
           >
             Cerimonia
           </Link>
           <Link
             to="party"
-            spy={true}
+            spy={false}
           >
             Ricevimento
           </Link>
           <Link
             to="accomodation"
-            spy={true}
+            spy={false}
           >
             Alloggio
           </Link>
           <Link
             to="wedding-list"
-            spy={true}
+            spy={false}
           >
             Lista nozze
           </Link>

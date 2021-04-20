@@ -1,93 +1,27 @@
+.mapRatio {
+  --bs-aspect-ratio: 100%;
+}
 
-.nav {
-  /* background-color: var(--off-white); */
-  /* position: sticky; */
-  position: fixed;
-  top: 0px;
+.thumb-post img {
+  object-fit: contain; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
   width: 100%;
-  height: 80px;
-  z-index: 1000;
-  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.15);
+  max-height: 250px;
 }
 
-.nav .navContent {
-  max-width: 900px;
-  padding: 0rem 3rem;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
+body {
+  background-color: rgb(242, 243, 185);
 }
 
-.navItems {
-
+* {
+  color: rgb(93, 96, 54);
 }
 
-.navItem {
-  display: inline;
-  margin-left: 2rem;
-  color: #333;
-}
-
-.navItem > .active {
-  border-bottom: 1px solid #333;
-}
-
-.navItem:hover {
-  color: black;
-  cursor: pointer;
-}
-
-.section {
-}
-
-.sectionDark {
-  background: #333;
-  color: white;
-}
-
-.sectionContent {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px;
-}
-
-.nameMarta {
-  position: absolute;
-  left: 20%;
-  top: 20%;
-  font-size: 4em;
-}
-
-.nameAndAmp {
-  position: absolute;
-  left: 50%;
-  top: 30%;
-  font-size: 3em;
-}
-
-.nameDaniele {
-  position: absolute;
-  right: 20%;
-  top: 40%;
-  font-size: 4em;
-}
-
-.presentationEntry {
-  position: absolute;
-  left: 20%;
-  top: 60%;
-  font-size: 4em;
-}
-
-.presentationDate {
-  position: absolute;
-  left: 20%;
-  top: 80%;
-  font-size: 4em;
-}
-
-.cerimonyChurchImage {
-  width: 50%;
+.navbar {
+  /* background-color: rgba(242, 243, 185, .85); */
+  background-color: rgba(242, 243, 185, .85);
+  /* -webkit-backdrop-filter: saturate(180%) blur(20px); */
+  /* backdrop-filter: saturate(180%) blur(20px); */
+  box-shadow: 0 0 0.5rem 1rem rgb(242 243 185 / 85%);
+  padding-bottom: 0;
 }
