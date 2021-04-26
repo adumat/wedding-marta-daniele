@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { Container } from 'react-bootstrap';
+import useSiteScopeContext from '../services/useSiteScopeContext';
 import Accomodation from './Accomodation';
+import Cake from './Cake';
 import Cerimony from './Cerimony';
 import Navbar from './navbar';
 import Party from './Party';
@@ -8,6 +10,7 @@ import Presentation from './Presentation';
 import WeddingList from './WeddingList';
 
 export default function Home() {
+  const siteScope = useSiteScopeContext();
   return (
     <>
       <Head>
@@ -20,8 +23,12 @@ export default function Home() {
         <Container fluid="md">
           <Presentation />
           <Cerimony />
-          <Party />
-          <Accomodation />
+          {siteScope === 'ricevimento'
+            ? <>
+                <Party />
+                <Accomodation />
+              </>
+            : <Cake />}
           <WeddingList />
         </Container>
       </div>

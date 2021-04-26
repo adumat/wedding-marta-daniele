@@ -1,5 +1,6 @@
 import { ScrollLink } from "react-scroll";
 import { Navbar as BNavbar, Nav } from "react-bootstrap";
+import useSiteScopeContext from "../services/useSiteScopeContext";
 
 const Link = ScrollLink(Nav.Link);
 
@@ -7,6 +8,7 @@ export default function Navbar() {
   // const handleScrollTop = () => {
   //   animateScroll.scrollToTop();
   // };
+  const siteScope = useSiteScopeContext();
   return (
       <BNavbar
         expand={true}
@@ -26,18 +28,28 @@ export default function Navbar() {
           >
             Cerimonia
           </Link>
-          <Link
-            to="party"
-            spy={false}
-          >
-            Ricevimento
-          </Link>
-          <Link
-            to="accomodation"
-            spy={false}
-          >
-            Alloggio
-          </Link>
+          {siteScope === 'ricevimento'
+            ? <>
+                <Link
+                  to="accomodation"
+                  spy={false}
+                >
+                  Alloggio
+                </Link>
+                <Link
+                  to="party"
+                  spy={false}
+                >
+                  Ricevimento
+                </Link>
+              </>
+            : <Link
+                to="cake"
+                spy={false}
+              >
+                Taglio della torta
+              </Link>
+          }
           <Link
             to="wedding-list"
             spy={false}
