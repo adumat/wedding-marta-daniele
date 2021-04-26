@@ -10,7 +10,7 @@ export default function Cerimony() {
       <Col
         xs={{ span: 12, order: 'last' }}
         lg={{ span: 6, order: 'first' }}
-        className="align-self-center"
+        className="align-self-center justify-content-center"
       >
         <Carousel
           controls={true}
@@ -52,10 +52,10 @@ export default function Cerimony() {
       <Col
         xs={{ span: 12, order: 'first' }}
         lg={{ span: 6, order: 'last' }}
-        className="d-flex align-items-center"
+        className="d-flex align-items-center justify-content-center"
         style={{ minHeight: `400px` }}
       >
-        <figure className="text-center">
+        <figure>
           <blockquote className="blockquote">
             <p>Basilica di Santa Maria in Trastevere</p>
             <p>Ore 15.30</p>

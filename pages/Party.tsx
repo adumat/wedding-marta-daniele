@@ -10,10 +10,10 @@ export default function Party() {
       <Col
         xs={{ span: 12, order: 'first' }}
         lg={{ span: 6, order: 'first' }}
-        className="d-flex align-items-center"
+        className="d-flex align-items-center justify-content-center"
         style={{ minHeight: `400px` }}
       >
-        <figure className="text-center">
+        <figure>
           <blockquote className="blockquote">
             <p>Villa Piccolomini</p>
           </blockquote>
@@ -25,7 +25,7 @@ export default function Party() {
       <Col
         xs={{ span: 12, order: 'last' }}
         lg={{ span: 6, order: 'last' }}
-        className="align-self-center"
+        className="align-self-center justify-content-center"
       >
         <Carousel
           controls={true}

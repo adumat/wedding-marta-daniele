@@ -8,7 +8,7 @@ export default function WeddingList() {
       <Col
         xs={{ span: 12, order: 'first' }}
         lg={{ span: 12, order: 'first' }}
-        className="text-center"
+        className="d-flex flex-column align-items-center justify-content-center"
         style={{ minHeight: `400px` }}
       >
         <p className="display-6">Non abbiamo una lista nozze ma tanti sogni nel cassetto:</p>

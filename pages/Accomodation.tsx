@@ -10,7 +10,7 @@ export default function Accomodation() {
       <Col
         xs={{ span: 12, order: 'last' }}
         lg={{ span: 6, order: 'first' }}
-        className="align-self-center"
+        className="align-self-center justify-content-center"
       >
         <Carousel
           controls={true}
@@ -52,10 +52,10 @@ export default function Accomodation() {
       <Col
         xs={{ span: 12, order: 'first' }}
         lg={{ span: 6, order: 'last' }}
-        className="d-flex align-items-center"
+        className="d-flex align-items-center justify-content-center"
         style={{ minHeight: `400px` }}
       >
-        <figure className="text-center">
+        <figure>
           <blockquote className="blockquote">
             <p>
               Per voi amici e parenti che venite da lontano abbiamo individuato le seguenti strutture per garantirvi un pernottamento nelle vicinanze della Chiesa.

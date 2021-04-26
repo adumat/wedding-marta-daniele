@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
+
 .mapRatio {
   --bs-aspect-ratio: 100%;
 }
@@ -11,6 +13,7 @@
 
 body {
   background-color: rgb(242, 243, 185);
+  font-family: 'Dancing Script', cursive;
 }
 
 * {
