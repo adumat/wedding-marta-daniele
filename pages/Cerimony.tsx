@@ -18,7 +18,7 @@ export default function Cerimony() {
     setActiveIndex(selectedIndex);
   };
   return (
-    <Row id="cerimony" style={{ minHeight: `${height}px` }} className="p-5">
+    <Row id="cerimony" style={{ minHeight: `${height}px` }} className="">
       <Col id="cerimony-images"
         xs={{ span: 12, order: 'last' }}
         lg={{ span: 6, order: 'first' }}

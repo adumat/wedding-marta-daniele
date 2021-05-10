@@ -14,7 +14,7 @@ export default function Navbar() {
         expand={true}
         // fixed="top"
         sticky="top"
-        className="d-flex justify-content-center align-items-center navbar">
+        className="d-flex justify-content-center align-items-center navbar-bg-custom">
         <Nav>
           <Link
             to="home"
@@ -26,6 +26,7 @@ export default function Navbar() {
           <Link
             to="cerimony"
             spy={false}
+            // offset={-10}
           >
             Cerimonia
           </Link>
@@ -34,12 +35,14 @@ export default function Navbar() {
                 <Link
                   to="party"
                   spy={false}
+                  // offset={-10}
                 >
                   Ricevimento
                 </Link>
                 <Link
                   to="accomodation"
                   spy={false}
+                  // offset={-10}
                 >
                   Alloggio
                 </Link>
@@ -47,6 +50,7 @@ export default function Navbar() {
             : <Link
                 to="cake"
                 spy={false}
+                // offset={-10}
               >
                 Taglio della torta
               </Link>
@@ -54,6 +58,7 @@ export default function Navbar() {
           <Link
             to="wedding-list"
             spy={false}
+            // offset={-10}
           >
             Lista nozze
           </Link>

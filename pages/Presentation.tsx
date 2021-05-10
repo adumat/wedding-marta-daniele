@@ -1,29 +1,16 @@
-import { Col, Row, Image } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import useWindowDimensions from "../services/useWindowDimensions";
 
 export default function Presentation() {
   const { height, width } = useWindowDimensions();
   return (
-    <div id="home" className="d-flex justify-content-center" style={{ minHeight: height }}>
-      <Row className="py-5 my-5 text-center">
-        <Col>
-          <p className="lead">
-            Siamo felici di annunciare il nostro matrimonio che si terrà Venerdì 3 Settembre 2021 presso la Basilica di Santa Maria in Trastevere alle ore 15.30
-          </p>
-        </Col>
-      </Row>
-      <Image
-        src={"trasparente_solo nomi.png"}
-        style={{
-          height: `${height - 200}px`,
-          width: `${width - 20}px`,
-          objectPosition: '100% 0',
-          bottom: `0px`,
-          objectFit: 'cover',
-          position: "absolute"
-        }}
-      />
-    </div>
+    <Row id="home" className="text-center" style={{ height: `${height}px` }}>
+      <Col>
+        <p style={{ top: `${height / width > 1 ? '50' : '30'}%` }} className={`lead lh-lg fs-2 position-relative start-50 translate-middle`}>
+          Siamo felici di annunciare il nostro matrimonio che si terrà Venerdì 3 Settembre 2021 presso la Basilica di Santa Maria in Trastevere alle ore 15.30
+        </p>
+      </Col>
+    </Row>
   );
 }
 

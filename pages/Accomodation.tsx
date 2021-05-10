@@ -18,7 +18,7 @@ export default function Accomodation() {
     setActiveIndex(selectedIndex);
   };
   return (
-    <Row id="accomodation" style={{ minHeight: `${height}px` }} className="p-5">
+    <Row id="accomodation" style={{ minHeight: `${height}px` }} className="">
       <Col
         id="accomodation-images"
         xs={{ span: 12, order: 'last' }}

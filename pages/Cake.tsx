@@ -18,7 +18,7 @@ export default function Cake() {
     setActiveIndex(selectedIndex);
   };
   return (
-    <Row id="cake" style={{ minHeight: `${height}px` }} className="p-5">
+    <Row id="cake" style={{ minHeight: `${height}px` }} className="">
       <Col
         xs={{ span: 12, order: 'first' }}
         lg={{ span: 6, order: 'first' }}

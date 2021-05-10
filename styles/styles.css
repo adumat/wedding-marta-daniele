@@ -20,7 +20,7 @@ body {
   color: rgb(93, 96, 54);
 }
 
-.navbar {
+.navbar-bg-custom {
   /* background-color: rgba(242, 243, 185, .85); */
   background-color: rgba(242, 243, 185, .85);
   /* -webkit-backdrop-filter: saturate(180%) blur(20px); */
