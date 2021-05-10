@@ -1,13 +1,25 @@
+import { useState } from "react";
 import { Carousel, Col, Row } from "react-bootstrap";
+import { scroller } from "react-scroll";
 import useWindowDimensions from "../services/useWindowDimensions";
 import CroppedImage from "./CroppedImage";
 import Map from "./map";
 
 export default function Cerimony() {
   const { height, width } = useWindowDimensions();
+  const [activeIndex, setActiveIndex] = useState<number | undefined>();
+  const goToMap = () => {
+    setActiveIndex(4);
+    scroller.scrollTo('cerimony-images', {
+      offset: -50
+    });
+  };
+  const handleSelect = (selectedIndex: number, e: any) => {
+    setActiveIndex(selectedIndex);
+  };
   return (
     <Row id="cerimony" style={{ minHeight: `${height}px` }} className="p-5">
-      <Col
+      <Col id="cerimony-images"
         xs={{ span: 12, order: 'last' }}
         lg={{ span: 6, order: 'first' }}
         className="align-self-center justify-content-center"
@@ -15,6 +27,8 @@ export default function Cerimony() {
         <Carousel
           controls={true}
           indicators={true}
+          activeIndex={activeIndex}
+          onSelect={handleSelect}
         >
           <Carousel.Item>
             <CroppedImage
@@ -57,11 +71,12 @@ export default function Cerimony() {
       >
         <figure>
           <blockquote className="blockquote">
-            <p>Basilica di Santa Maria in Trastevere</p>
+            <p><a style={{ cursor: 'pointer' }} className="link-secondary text-decoration-none" onClick={goToMap}>Basilica di Santa Maria in Trastevere</a></p>
             <p>Ore 15.30</p>
+            <p>La Basilica si trova in zona pedonale. Vi consigliamo ad organizzarvi con giusto anticipo a causa della limitata disponibilità di parcheggio.</p>
           </blockquote>
           <figcaption className="blockquote-footer p-3 m-3">
-          L’orario della celebrazione non potrà subire alcun ritardo per mantenere le tempistiche richieste dalla Chiesa per la sanificazione
+            L’orario della celebrazione non potrà subire alcun ritardo per mantenere le tempistiche richieste dalla Chiesa per la sanificazione
           </figcaption>
         </figure>
       </Col>

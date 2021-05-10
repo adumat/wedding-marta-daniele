@@ -1,13 +1,26 @@
+import { useState } from "react";
 import { Carousel, Col, Row } from "react-bootstrap";
+import { scroller } from "react-scroll";
 import useWindowDimensions from "../services/useWindowDimensions";
 import CroppedImage from "./CroppedImage";
 import Map from "./map";
 
 export default function Accomodation() {
   const { height, width } = useWindowDimensions();
+  const [activeIndex, setActiveIndex] = useState<number | undefined>();
+  const goToMap = () => {
+    setActiveIndex(2);
+    scroller.scrollTo('accomodation-images', {
+      offset: -50
+    });
+  };
+  const handleSelect = (selectedIndex: number, e: any) => {
+    setActiveIndex(selectedIndex);
+  };
   return (
     <Row id="accomodation" style={{ minHeight: `${height}px` }} className="p-5">
       <Col
+        id="accomodation-images"
         xs={{ span: 12, order: 'last' }}
         lg={{ span: 6, order: 'first' }}
         className="align-self-center justify-content-center"
@@ -15,28 +28,18 @@ export default function Accomodation() {
         <Carousel
           controls={true}
           indicators={true}
+          activeIndex={activeIndex}
+          onSelect={handleSelect}
         >
           <Carousel.Item>
             <CroppedImage
-              url="church_1.jpg"
+              url="accomodation_1.jpg"
               height={height}
             />
           </Carousel.Item>
           <Carousel.Item>
             <CroppedImage
-              url="church_2.jpg"
-              height={height}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <CroppedImage
-              url="church_3.jpg"
-              height={height}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <CroppedImage
-              url="church_4.png"
+              url="accomodation_2.jpg"
               height={height}
             />
           </Carousel.Item>

@@ -9,6 +9,7 @@ export default function CroppedImage({ url, height }: { url: string; height: num
       <Image
         src={url}
         rounded
+        className="shadow"
         style={{ maxHeight: `${height}px` }}
       />
     </div>

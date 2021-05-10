@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { scroller } from 'react-scroll';
 import { Row, Col, Carousel } from "react-bootstrap";
 import useWindowDimensions from "../services/useWindowDimensions";
 import CroppedImage from "./CroppedImage";
@@ -5,6 +7,16 @@ import Map from "./map";
 
 export default function Party() {
   const { height, width } = useWindowDimensions();
+  const [activeIndex, setActiveIndex] = useState<number | undefined>();
+  const goToMap = () => {
+    setActiveIndex(4);
+    scroller.scrollTo('party-images', {
+      offset: -50
+    });
+  };
+  const handleSelect = (selectedIndex: number, e: any) => {
+    setActiveIndex(selectedIndex);
+  };
   return (
     <Row id="party" style={{ minHeight: `${height}px` }} className="p-5">
       <Col
@@ -14,15 +26,16 @@ export default function Party() {
         style={{ minHeight: `400px` }}
       >
         <figure>
-          <blockquote className="blockquote">
-            <p>Villa Piccolomini</p>
+          <blockquote className="blockquote text-center">
+            <p>A seguito della cerimonia, saremo felici di festeggiare insieme presso</p>
+            <p className="fw-bolder fs-3">Villa Piccolomini</p>
+            <p><a style={{ cursor: 'pointer' }} className="link-secondary text-decoration-none" onClick={goToMap}>Via Aurelia Antica, 164, 00165 Roma RM</a></p>
+            <p>Villa Piccolomini dista solo pochi chilometri da Trastevere e il tragitto offre diversi scorci panoramici di Roma che vi consigliamo di non trascurare. La Fontana dell’Acqua Paola, Piazza Garibaldi e Via Piccolomini, famosa per l’effetto ottico della Cupola di San Pietro.</p>
           </blockquote>
-          <figcaption className="blockquote-footer p-3 m-3">
-            Ampio parcheggio all’interno della struttura
-          </figcaption>
         </figure>
       </Col>
       <Col
+        id="party-images"
         xs={{ span: 12, order: 'last' }}
         lg={{ span: 6, order: 'last' }}
         className="align-self-center justify-content-center"
@@ -30,28 +43,30 @@ export default function Party() {
         <Carousel
           controls={true}
           indicators={true}
+          activeIndex={activeIndex}
+          onSelect={handleSelect}
         >
           <Carousel.Item>
             <CroppedImage
-              url="church_1.jpg"
+              url="party_1.jpg"
               height={height}
             />
           </Carousel.Item>
           <Carousel.Item>
             <CroppedImage
-              url="church_2.jpg"
+              url="party_2.jpg"
               height={height}
             />
           </Carousel.Item>
           <Carousel.Item>
             <CroppedImage
-              url="church_3.jpg"
+              url="party_3.jpg"
               height={height}
             />
           </Carousel.Item>
           <Carousel.Item>
             <CroppedImage
-              url="church_4.png"
+              url="party_4.jpg"
               height={height}
             />
           </Carousel.Item>

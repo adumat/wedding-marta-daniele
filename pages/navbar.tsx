@@ -19,6 +19,7 @@ export default function Navbar() {
           <Link
             to="home"
             spy={false}
+            offset={-100}
           >
             Home
           </Link>
@@ -31,16 +32,16 @@ export default function Navbar() {
           {siteScope === 'ricevimento'
             ? <>
                 <Link
-                  to="accomodation"
-                  spy={false}
-                >
-                  Alloggio
-                </Link>
-                <Link
                   to="party"
                   spy={false}
                 >
                   Ricevimento
+                </Link>
+                <Link
+                  to="accomodation"
+                  spy={false}
+                >
+                  Alloggio
                 </Link>
               </>
             : <Link
