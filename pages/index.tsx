@@ -26,12 +26,13 @@ export default function Home() {
       }}>
         <Navbar />
         <Image
-          src={"trasparente_solo_nomi.png"}
+          // src={"trasparente_solo_nomi.png"}
+          src={"imm_sito.png"}
           style={{
-            height: `${height / width > 1 ? width - 150 : height - 100}px`,
+            height: `${height / width > 1 ? width - 200 : height - 200}px`,
             // height: `${height}px`,
             width: `${width}px`,
-            objectPosition: '100% 0%',
+            objectPosition: '55% 0%',
             bottom: `0px`,
             left: '0px',
             objectFit: 'cover',

@@ -6,7 +6,7 @@ export default function Presentation() {
   return (
     <Row id="home" className="text-center" style={{ height: `${height}px` }}>
       <Col>
-        <p style={{ top: `${height / width > 1 ? '50' : '30'}%` }} className={`lead lh-lg fs-2 position-relative start-50 translate-middle`}>
+        <p style={{ top: `${height / width > 1 ? '40' : '30'}%` }} className={`lead lh-lg fs-2 position-relative start-50 translate-middle`}>
           Siamo felici di annunciare il nostro matrimonio che si terrà Venerdì 3 Settembre 2021 presso la Basilica di Santa Maria in Trastevere alle ore 15.30
         </p>
       </Col>
