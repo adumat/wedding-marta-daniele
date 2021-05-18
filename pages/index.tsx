@@ -29,13 +29,13 @@ export default function Home() {
           // src={"trasparente_solo_nomi.png"}
           src={"imm_sito.png"}
           style={{
-            height: `${height / width > 1 ? width - 200 : height - 200}px`,
+            // height: `${height / width > 1 ? width - 200 : height - 200}px`,
             // height: `${height}px`,
             width: `${width}px`,
             objectPosition: '55% 0%',
             bottom: `0px`,
             left: '0px',
-            objectFit: 'cover',
+            objectFit: 'contain',
             position: "fixed",
             backgroundAttachment: 'fixed',
             zIndex: -1
