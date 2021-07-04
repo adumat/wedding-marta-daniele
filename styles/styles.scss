@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
+
+$body-bg: rgb(242, 243, 185);
+$body-color: rgb(93, 96, 54);
+$primary: rgb(93, 96, 54);
+
+$font-family-base: 'Dancing Script', cursive;
+
+$input-bg: rgb(242, 243, 213);
+$modal-content-bg: rgba(242, 243, 185, 0.842);
+$border-color: rgb(197, 202, 118);
+
+.mapRatio {
+  --bs-aspect-ratio: 100%;
+}
+
+.thumb-post img {
+  object-fit: contain; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  width: 100%;
+  max-height: 250px;
+}
+
+.navbar-bg-custom {
+  /* background-color: rgba(242, 243, 185, .85); */
+  background-color: rgba(242, 243, 185, .85);
+  /* -webkit-backdrop-filter: saturate(180%) blur(20px); */
+  /* backdrop-filter: saturate(180%) blur(20px); */
+  box-shadow: 0 0 0.5rem 1rem rgb(242 243 185 / 85%);
+  padding-bottom: 0;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";

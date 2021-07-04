@@ -27,7 +27,7 @@ export default function Party() {
       >
         <figure>
           <blockquote className="blockquote text-center">
-            <p>A seguito della cerimonia, saremo felici di festeggiare insieme presso</p>
+            <p>Alle ore 18 saremo felici di proseguire i festeggiamenti insieme presso</p>
             <p className="fw-bolder fs-3">Villa Piccolomini</p>
             <p><a style={{ cursor: 'pointer' }} className="link-secondary text-decoration-none" onClick={goToMap}>Via Aurelia Antica, 164, 00165 Roma RM</a></p>
             <p>Villa Piccolomini dista solo pochi chilometri da Trastevere e il tragitto offre diversi scorci panoramici di Roma che vi consigliamo di non trascurare. La Fontana dell’Acqua Paola, Piazza Garibaldi e Via Piccolomini, famosa per l’effetto ottico della Cupola di San Pietro.</p>

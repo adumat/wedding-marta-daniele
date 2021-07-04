@@ -5,7 +5,7 @@ import useWindowDimensions from "../services/useWindowDimensions";
 import CroppedImage from "./CroppedImage";
 import Map from "./map";
 
-export default function Accomodation() {
+export default function Accomodation({ setShowAssignamentModal }: {setShowAssignamentModal:(b: boolean) => void}) {
   const { height, width } = useWindowDimensions();
   const [activeIndex, setActiveIndex] = useState<number | undefined>();
   const goToMap = () => {
@@ -16,6 +16,9 @@ export default function Accomodation() {
   };
   const handleSelect = (selectedIndex: number, e: any) => {
     setActiveIndex(selectedIndex);
+  };
+  const openAssignmentModal = () => {
+    setShowAssignamentModal(true);
   };
   return (
     <Row id="accomodation" style={{ minHeight: `${height}px` }} className="">
@@ -68,7 +71,7 @@ export default function Accomodation() {
             </p>
           </blockquote>
           <figcaption className="blockquote-footer p-3 m-3">
-            La suddivisione degli ospiti verrà comunicata prossimamente
+            <a style={{ cursor: 'pointer' }} className="link-secondary text-decoration-none" onClick={openAssignmentModal}>Scopri dove sei stato assegnato 🎉🎉🎉</a>
           </figcaption>
         </figure>
       </Col>

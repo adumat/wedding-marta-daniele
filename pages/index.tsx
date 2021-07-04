@@ -1,18 +1,21 @@
 import Head from 'next/head';
+import { useState } from 'react';
 import { Container, Image } from 'react-bootstrap';
 import useSiteScopeContext from '../services/useSiteScopeContext';
 import useWindowDimensions from '../services/useWindowDimensions';
-import Accomodation from './Accomodation';
-import Cake from './Cake';
-import Cerimony from './Cerimony';
-import Navbar from './navbar';
-import Party from './Party';
-import Presentation from './Presentation';
-import WeddingList from './WeddingList';
+import Accomodation from '../components/Accomodation';
+import AssignamentModal from '../components/AssignamentModal';
+import Cake from '../components/Cake';
+import Cerimony from '../components/Cerimony';
+import Navbar from '../components/navbar';
+import Party from '../components/Party';
+import Presentation from '../components/Presentation';
+import WeddingList from '../components/WeddingList';
 
 export default function Home() {
   const siteScope = useSiteScopeContext();
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
+  const [showAssignamentModal, setShowAssignamentModal] = useState(false);
   return (
     <>
       <Head>
@@ -25,6 +28,7 @@ export default function Home() {
         position: 'relative'
       }}>
         <Navbar />
+        <AssignamentModal showAssignamentModal={showAssignamentModal} setShowAssignamentModal={setShowAssignamentModal} />
         <Image
           // src={"trasparente_solo_nomi.png"}
           src={"imm_sito.png"}
@@ -48,7 +52,7 @@ export default function Home() {
           {siteScope === 'ricevimento'
             ? <>
                 <Party />
-                <Accomodation />
+                <Accomodation setShowAssignamentModal={setShowAssignamentModal} />
               </>
             : <Cake />}
           <WeddingList />
