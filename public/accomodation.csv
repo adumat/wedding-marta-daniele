@@ -1,2 +1,57 @@
-nome,cognome,location
-matteo,aduso,a
+﻿Alloggio;Camera;Ospite;Check in;Check out;Indirizzo;Notti;Tipologia
+Le Clarisse;1;Pietro Moro;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;1;Luciana Sanavio;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;2;Enrico Moro;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;2;Federica Dal Maschio;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;3;Mattia Gattolin;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;3;Nicolò Sandonà;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;4;Franca Furlan;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;4;Giorgio Gattolin;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;5;Gianrico Gattolin;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;5;Beatrice Vignato;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;6;Giulia Gattolin;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;6;Emanuele Sacchetto;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;7;Elisa Garro;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;7;Matteo Aduso;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;8;Alessia Meneghello;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;8;Mattia Corè;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;9;Valerio Fè;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;9;Sara Orsina;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;10;Jacopo Allegri;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Le Clarisse;10;Elena Lake;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Doppia
+Tiny Home;11;Antonio Zaglia;02/09/2021;05/09/2021;Via del Moro 33;3;Doppia
+Tiny Home;11;Roberta Gabaldo;02/09/2021;05/09/2021;Via del Moro 33;3;Doppia
+Palazzo Velli Suites;12;Grazia Beda;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;12;Tommaso Comellato;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;13;Marco Moro;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;13;Melissa Berlose;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;13;Eleonora Marino;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;14;Sara Prosdocimi;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;14;Enrico Baraldo;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;15;Chiara Moro;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;15;Eletta Finco;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;15;Elena Moro;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;15;Marina Falcao De Barros;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;16;Carlo Sanavio;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;16;Teresa Tosetto;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;16;Pietro Sanavio;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;16;Arianna Fincato;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;17;Anna Sanavio;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;17;Giovanni Sanavio;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Palazzo Velli Suites;17;Imelda Baù;02/09/2021;05/09/2021;Piazza di S Egidio 9;3;Appartamento
+Appartamento Via Mameli;18;Giulia Savi;02/09/2021;04/09/2021;Via Angelo Tittoni 10;2;Doppia
+Appartamento Via Mameli;18;Francesco Peraro;02/09/2021;04/09/2021;Via Angelo Tittoni 10;2;Doppia
+Hotel San Francesco;19;Cecilia Allegri;02/09/2021;04/09/2021;Via Jacopa de Settesoli 7;2;Singola
+Le Clarisse;20;Cesare Contarini;02/09/2021;05/09/2021;Via Cardinale Merry del Val 20;3;Singola
+Hotel San Francesco;21;Alfredo Menegazzo;02/09/2021;05/09/2021;Via Jacopa de Settesoli 7;3;Singola
+Hotel San Francesco;22;Alessandra Gattolin;02/09/2021;04/09/2021;Via Jacopa de Settesoli 7;2;Tripla
+Hotel San Francesco;22;Sandro Melato;02/09/2021;04/09/2021;Via Jacopa de Settesoli 7;2;Tripla
+Hotel San Francesco;22;Martina Melato;02/09/2021;04/09/2021;Via Jacopa de Settesoli 7;2;Tripla
+Dream Home;23;Maura Raccanello;02/09/2021;05/09/2021;Vicolo dei Renzi 2;3;Doppia
+Dream Home;23;Carlo Nespoli;02/09/2021;05/09/2021;Vicolo dei Renzi 2;3;Doppia
+Hotel San Francesco;24;Nicolò Sandonà;02/09/2021;04/09/2021;Via Jacopa de Settesoli 7;2;Singola
+Hotel San Francesco;25;Selene Gaio;02/09/2021;04/09/2021;Via Jacopa de Settesoli 7;2;Doppia
+Hotel San Francesco;25;Filippo Abbadir;02/09/2021;04/09/2021;Via Jacopa de Settesoli 7;2;Doppia
+Hotel San Francesco;26;Damiano Bianchi;02/09/2021;04/09/2021;Via Jacopa de Settesoli 7;2;Singola
+Hotel San Francesco;27;Cecila De Fabiis;03/09/2021;04/09/2021;Via Jacopa de Settesoli 7;1;Doppia
+Hotel San Francesco;27;Marcello De Fabiis;03/09/2021;04/09/2021;Via Jacopa de Settesoli 7;1;Doppia

@@ -12,23 +12,46 @@ enum AssignamentModalState {
   NOTFOUND = 'show_notfound',
 }
 
-const AlternativeA = () => {
-  return <Container>
-    <Row>
-      <Col>Casa A</Col>
-    </Row>
-  </Container>;
-};
+const HREF_APP_VIA_MAMELI = 'https://goo.gl/maps/d7cFgjxPaAKUM2fK6';
+const HREF_DREAM_HOME = 'https://goo.gl/maps/EeKAGGwHgz3Lu8JS6';
+const HREF_HOTEL_SFRANCESCO = 'https://goo.gl/maps/RhPLFAxDb6BGvgir7';
+const HREF_LE_CLARISSE = 'https://g.page/relaisleclarissetrastevere?share';
+const HREF_PALAZZO_VELLI_SUITES = 'https://g.page/palazzo-velli-suites?share';
+const HREF_TINY_HOME = 'https://goo.gl/maps/PvwGucYs4EzT8Tw28';
 
-const AlternativeB = () => {
-  return <div>B</div>;
-};
+interface CSVInputRow {
+  Ospite: string;
+  Alloggio: 'Le Clarisse'
+  | 'Tiny Home'
+  | 'Palazzo Velli Suites'
+  | 'Appartamento Via Mameli'
+  | 'Hotel San Francesco'
+  | 'Dream Home';
+  Camera: string;
+  "Check in": string;
+  "Check out": string;
+  Indirizzo: string;
+  Notti: string;
+  Tipologia: string;
+}
 
-const AlternativeC = () => {
-  return <div>C</div>;
-};
+// const AlternativeA = () => {
+//   return <Container>
+//     <Row>
+//       <Col>Casa A</Col>
+//     </Row>
+//   </Container>;
+// };
 
-const GiftOpenAnimation = ({ result, handleClickHouse }: { result: string; handleClickHouse: () => void; }) => {
+// const AlternativeB = () => {
+//   return <div>B</div>;
+// };
+
+// const AlternativeC = () => {
+//   return <div>C</div>;
+// };
+
+const GiftOpenAnimation = ({ result, handleClickHouse }: { result: CSVInputRow; handleClickHouse: () => void; }) => {
   const [started, setStartedAnimation] = useState<boolean>(false);
   const [showLink, setShowLink] = useState<boolean>(false);
   const [animation, setAnimation] = useState<string>('animate__zoomIn');
@@ -42,8 +65,15 @@ const GiftOpenAnimation = ({ result, handleClickHouse }: { result: string; handl
       setTimeout(() => setAnimation('animate__tada'), 1000);
     }
   }, [showLink]);
+  const cbClick = () => {
+    if (showLink) {
+      handleClickHouse();
+    } else {
+      setStartedAnimation(true);
+    }
+  };
   return (
-    <div onClick={() => setStartedAnimation(!started)} className="position-relative" style={{ cursor: 'pointer' }}>
+    <div onClick={cbClick} className="position-relative" style={{ cursor: 'pointer' }}>
       <Lottie options={{
         loop: false,
         autoplay: false,
@@ -58,43 +88,43 @@ const GiftOpenAnimation = ({ result, handleClickHouse }: { result: string; handl
       height={400}
       width={400}/>
       <div className={`position-absolute top-50 start-50 translate-middle`}>
-        <div className={`animate__animated ${animation} ${showLink ? '' : 'd-none'}`} style={{ fontSize: '6rem' }} onClick={handleClickHouse}>
-          {result === 'a' ? 'Casa A' : result === 'b' ? 'Casa B' : 'Casa C'}
+        <div className={`text-center animate__animated ${animation} ${showLink ? '' : 'd-none'}`} style={{ fontSize: '4rem' }}>
+          {result.Alloggio}
         </div>
       </div>
     </div>
   );
 };
 
-const InputBox = ({ setResult, setModalState }: { setResult: (result: string | null) => void; setModalState: (state: AssignamentModalState) => void }) => {
-  const firstName = useRef<HTMLInputElement>(null);
-  const lastName = useRef<HTMLInputElement>(null);
+const InputBox = ({ setResult, setModalState }: { setResult: (result: CSVInputRow | null) => void; setModalState: (state: AssignamentModalState) => void }) => {
+  const name = useRef<HTMLInputElement>(null);
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
     const res = await fetch(window.location.origin + '/accomodation.csv');
     const text = await res.text();
-    if (firstName.current === null || lastName.current === null) {
+    if (name.current === null) {
       setResult(null);
       setModalState(AssignamentModalState.NOTFOUND);
       return;
     }
-    const first = firstName.current.value.trim().toLowerCase();
-    const last = lastName.current.value.trim().toLowerCase();
+    const nameNormalized = name.current.value.trim().toLowerCase();
     csv(text, {
-      columns: true
-    }, (err, out: {nome: string; cognome: string; location: string}[]) => {
+      columns: true,
+      delimiter: ';'
+    }, (err, out: CSVInputRow[]) => {
       if (err) {
         console.error(err);
         return;
       }
-      const res = out.filter(({ nome, cognome }) => {
-        return nome.trim().toLowerCase() === first && cognome.trim().toLowerCase() === last;
+      console.log(out);
+      const res = out.filter(({ Ospite }) => {
+        return Ospite.trim().toLowerCase().indexOf(nameNormalized) !== -1;
       });
       if (res.length === 0) {
         setResult(null);
         setModalState(AssignamentModalState.NOTFOUND);
       } else {
-        setResult(res[0].location);
+        setResult(res[0]);
         setModalState(AssignamentModalState.BOX);
       }
     });
@@ -114,17 +144,9 @@ const InputBox = ({ setResult, setModalState }: { setResult: (result: string | n
           </Row>
           <Row>
             <Col xs={12} md={12}>
-              <Form.Group controlId="firstName">
-                <Form.Label>Nome</Form.Label>
-                <Form.Control required ref={firstName} type="text" />
-              </Form.Group>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12} md={12}>
-              <Form.Group controlId="lastName">
-                <Form.Label>Cognome</Form.Label>
-                <Form.Control required ref={lastName} type="text" />
+              <Form.Group controlId="name">
+                <Form.Label>Nome e Cognome</Form.Label>
+                <Form.Control required ref={name} type="text" />
               </Form.Group>
             </Col>
           </Row>
@@ -140,10 +162,13 @@ const InputBox = ({ setResult, setModalState }: { setResult: (result: string | n
   );
 };
 
-const ShowBox = ({ result, setModalState }: { result: string; setModalState: (state: AssignamentModalState) => void }) => {
+const ShowBox = ({ result, setModalState }: { result: CSVInputRow | null; setModalState: (state: AssignamentModalState) => void }) => {
   const handleClose = () => {
     setModalState(AssignamentModalState.HOUSE);
   };
+  if (result === null) {
+    return null;
+  }
   return (
     <>
       <Modal.Header closeButton>
@@ -161,19 +186,38 @@ const ShowBox = ({ result, setModalState }: { result: string; setModalState: (st
   );
 };
 
-const ShowHouse = ({ result, setShowAssignamentModal }: { result: string | null; setShowAssignamentModal: (b: boolean) => void }) => {
+const ShowHouse = ({ result, setShowAssignamentModal }: { result: CSVInputRow | null; setShowAssignamentModal: (b: boolean) => void }) => {
   const handleClick = () => {
     setShowAssignamentModal(false);
   };
+  if (result === null) {
+    return null;
+  }
   return (
     <>
       <Modal.Header closeButton>
         <Modal.Title>Informazioni alloggio</Modal.Title>
       </Modal.Header>
       <Modal.Body className="show-grid">
-      <Container>
-        {result === 'a' ? <AlternativeA /> : result === 'b' ? <AlternativeB /> : <AlternativeC />}
-      </Container>
+        <Container className="text-center">
+          <Row>
+            <Col style={{ fontSize: '4rem' }}>{result.Alloggio}</Col>
+          </Row>
+          <Row>
+            <Col>
+              <a href={result.Alloggio === "Appartamento Via Mameli" ? HREF_APP_VIA_MAMELI : result.Alloggio === "Dream Home" ? HREF_DREAM_HOME : result.Alloggio === "Hotel San Francesco" ? HREF_HOTEL_SFRANCESCO : result.Alloggio === "Le Clarisse" ? HREF_LE_CLARISSE : result.Alloggio === "Palazzo Velli Suites" ? HREF_PALAZZO_VELLI_SUITES : HREF_TINY_HOME}>
+                {result.Indirizzo}
+              </a>
+            </Col>
+          </Row>
+          <Row>
+            <Col>{result["Check in"]} - {result["Check out"]}</Col>
+          </Row>
+          <Row>
+            <Col>{result.Tipologia}</Col>
+          </Row>
+          {/* {result === 'a' ? <AlternativeA /> : result === 'b' ? <AlternativeB /> : <AlternativeC />} */}
+        </Container>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="primary" onClick={handleClick}>
@@ -228,7 +272,7 @@ const NotFound = ({ setShowAssignamentModal }: { setShowAssignamentModal: (b: bo
 };
 
 export default function AssignamentModal({ showAssignamentModal, setShowAssignamentModal }: { showAssignamentModal: boolean; setShowAssignamentModal: (b: boolean) => void }) {
-  const [result, setResult] = useState<string | null>(null);
+  const [result, setResult] = useState<CSVInputRow | null>(null);
   const [modalState, setModalState] = useState<AssignamentModalState>();
   const handleClose = () => {
     setShowAssignamentModal(false);
@@ -253,7 +297,7 @@ export default function AssignamentModal({ showAssignamentModal, setShowAssignam
         centered
       >
         {modalState === AssignamentModalState.BOX
-          ? <ShowBox setModalState={setModalState} result={result || ''} />
+          ? <ShowBox setModalState={setModalState} result={result} />
           : modalState === AssignamentModalState.HOUSE
             ? <ShowHouse result={result} setShowAssignamentModal={setShowAssignamentModal} />
             : modalState === AssignamentModalState.INPUT
