@@ -27,7 +27,9 @@ export default function Cake() {
       >
         <figure>
           <blockquote className="blockquote">
+            <p>Vi aspettiamo presso</p>
             <p className="fw-bolder fs-3">Villa Piccolomini</p>
+            <p>alle ore 22 per festeggiare insieme con Brindisi e dolce</p>
             <p><a style={{ cursor: 'pointer' }} className="link-secondary text-decoration-none" onClick={goToMap}>Via Aurelia Antica, 164, 00165 Roma RM</a></p>
             <p>Villa Piccolomini dista solo pochi chilometri da Trastevere e il tragitto offre diversi scorci panoramici di Roma che vi consigliamo di non trascurare. La Fontana dell’Acqua Paola, Piazza Garibaldi e Via Piccolomini, famosa per l’effetto ottico della Cupola di San Pietro.</p>
           </blockquote>
